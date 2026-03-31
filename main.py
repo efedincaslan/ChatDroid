@@ -18,7 +18,7 @@ app.add_middleware(
 )
 
 # Rate limiting with IP exception
-OWNER_IP = "136.41.192.83"
+OWNER_IP = os.getenv("OWNER_IP")
 
 def custom_key_func(request: Request):
     client_ip = get_remote_address(request)
